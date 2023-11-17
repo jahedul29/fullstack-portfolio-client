@@ -10,9 +10,9 @@ const AboutMe = ({ ownerData, id = "" }: { ownerData: any; id?: string }) => {
       id={id}
     >
       <SectionHeader title="About Me" />
-      <div className="flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-y-10 md:gap-y-0 gap-x-0 md:gap-x-20">
+      <div className="flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-y-10 md:gap-y-0 gap-x-0 md:gap-x-20 text-lightText">
         <div className="w-full md:w-1/2">
-          {aboutMe.map((item: string) => (
+          {aboutMe?.map((item: string) => (
             <p className="mb-3 text-lg" key={item}>
               {item}
             </p>

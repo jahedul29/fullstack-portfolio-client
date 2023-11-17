@@ -3,7 +3,7 @@ import HireMeButton from "./HireMeButton";
 import ParticleAnimation from "./ParticleAnimation";
 import SkillTypical from "./SkillTypical";
 
-const Header = ({
+const Header = async ({
   ownerData,
   skills,
 }: {
@@ -17,7 +17,7 @@ const Header = ({
   return (
     <div className="min-h-[calc(100vh-70px)] relative overflow-hidden">
       <ParticleAnimation />
-      <div className="w-full flex flex-col items-center h-full gap-y-4 md:gap-y-7 relative z-10 mt-10 md:mt-40">
+      <div className="container mx-auto w-full flex flex-col items-center justify-center h-screen gap-y-4 md:gap-y-7 relative z-10 pb-40">
         <p className="text-ternaryText text-2xl font-bold">Hi, I am</p>
         <h1 className="text-primaryText text-4xl md:text-6xl font-semibold">
           {ownerData?.name}
@@ -27,6 +27,7 @@ const Header = ({
         </p>
         <SkillTypical skills={skillForTypical} />
         <HireMeButton />
+        {/* <GithubData /> */}
       </div>
     </div>
   );

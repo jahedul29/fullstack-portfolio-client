@@ -4,13 +4,13 @@ export const getData = async (
   url: string,
   revalidate = 3600,
   tags: string[] = [],
-  params: Record<string, any> = {}
+  params: Record<string, any> = {},
+  baseApiUrl = getEnvConfig().api_url
 ) => {
   let isLoading = true;
   let isError = false;
   let data;
   let error;
-  const baseApiUrl = getEnvConfig().api_url;
 
   try {
     const queryParams = new URLSearchParams(params).toString();

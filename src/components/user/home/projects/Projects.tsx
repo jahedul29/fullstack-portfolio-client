@@ -52,12 +52,12 @@ const Projects = ({ projects, id = "" }: { projects: any; id?: string }) => {
             <h2 className="text-primaryText text-xl my-3 font-semibold">
               {project?.title}
             </h2>
-            <p className="text-primaryText font-medium mb-8">
+            <p className="font-medium mb-8 text-lightText">
               {project?.description}
             </p>
             <p className="text-secondaryText font-bold text-sm flex">
               {project?.technologies?.map((item: ISkill, index: number) => (
-                <span key={item.id} className="flex">
+                <span key={item.id + index} className="flex">
                   {item.name}{" "}
                   {index !== project?.technologies?.length - 1 && (
                     <span className="mx-1">|</span>

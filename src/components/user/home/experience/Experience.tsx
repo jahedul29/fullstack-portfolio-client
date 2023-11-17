@@ -39,14 +39,16 @@ const Experience = ({
                 {experience?.description}
               </p>
               <div className=" flex gap-2 flex-wrap">
-                {experience?.technologies.map((skill: ISkill) => (
-                  <p
-                    key={skill.id}
-                    className="rounded-lg px-2 py-1 bg-ternaryText text-secondaryBg text-sm font-semibold"
-                  >
-                    {skill?.name}
-                  </p>
-                ))}
+                {experience?.technologies.map(
+                  (skill: ISkill, index: number) => (
+                    <p
+                      key={skill.id + index}
+                      className="rounded-lg px-2 py-1 bg-ternaryText text-secondaryBg text-sm font-semibold"
+                    >
+                      {skill?.name}
+                    </p>
+                  )
+                )}
               </div>
             </div>
           </div>

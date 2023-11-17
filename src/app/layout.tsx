@@ -20,28 +20,46 @@ export async function generateMetadata(): Promise<Metadata> {
     icons: {
       icon: ownerData?.photoUrl,
       apple: ownerData?.photoUrl,
+      shortcut: ownerData?.photoUrl,
     },
+    metadataBase: new URL("https://www.jahedulhoque.com"),
+    // metadataBase:
+    //   typeof window !== "undefined" ? new URL(window.location.href) : undefined,
     openGraph: {
       type: "website",
       url: typeof window !== "undefined" ? window.location.href : "",
-      title: ownerData?.name,
-      description: ownerData?.aboutOwner,
-      siteName: "My Website",
-      images: [
-        {
-          url: ownerData?.photoUrl,
-        },
-      ],
+      title: ownerData?.designation,
+      description: ownerData?.aboutOwner?.split("\n")[0],
+      siteName: ownerData?.name,
+      images: [{ url: ownerData?.photoUrl }],
+      locale: "en_US",
     },
     twitter: {
-      card: ownerData?.aboutOwner,
+      card: ownerData?.designation,
       title: ownerData?.name,
       description: ownerData?.aboutOwner,
-      images: [
-        {
-          url: ownerData?.photoUrl,
-        },
-      ],
+      images: [{ url: ownerData?.photoUrl }],
+    },
+    robots: {
+      index: false,
+      follow: true,
+      nocache: true,
+      googleBot: {
+        index: true,
+        follow: false,
+        noimageindex: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+    verification: {
+      google: "google",
+      yandex: "yandex",
+      yahoo: "yahoo",
+      other: {
+        me: ["my-email", "my-link"],
+      },
     },
   };
 }

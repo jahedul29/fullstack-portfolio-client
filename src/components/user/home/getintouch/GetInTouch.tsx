@@ -47,7 +47,7 @@ const GetInTouch = ({
       <SectionHeader title="Get In Touch" classNames="text-center" />
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-5 gap-y-10 lg:gap-y-0">
         <div className="flex flex-col gap-y-8">
-          <p className="text-lg text-textPrimary ">
+          <p className="text-lg text-lightText">
             If you want to know more about anything. You can contact with me.
             You can also give me opinion about my page. My inbox is always open
             for you. I will try my best to reply all of your message
@@ -76,7 +76,7 @@ const GetInTouch = ({
 
           {ownerData?.calanderlyUrl && (
             <div className="text-lg">
-              <p>Schedule a meeting:</p>
+              <p className="text-lightText">Schedule a meeting:</p>
               <Link
                 className="text-ternaryText"
                 href={ownerData?.calanderlyUrl}
@@ -88,26 +88,26 @@ const GetInTouch = ({
           )}
 
           <div className="text-lg">
-            <p>Social Handles:</p>
+            <p className="text-lightText">Social Handles:</p>
             <div className="flex text-4xl gap-4 mt-2">
               {ownerData?.githubUrl && (
                 <Link href={ownerData?.githubUrl} target="_blank">
-                  <FaGithub className="rounded-full border-2 border-ternaryText" />
+                  <FaGithub className="rounded-full border-2 border-ternaryText text-lightText" />
                 </Link>
               )}
               {ownerData?.facebookUrl && (
                 <Link href={ownerData?.facebookUrl} target="_blank">
-                  <FaFacebook className="rounded-full border-2 border-ternaryText" />
+                  <FaFacebook className="rounded-full border-2 border-ternaryText text-lightText" />
                 </Link>
               )}
               {ownerData?.linkedInUrl && (
                 <Link href={ownerData?.linkedInUrl} target="_blank">
-                  <FaLinkedin className="rounded-full border-2 border-ternaryText" />
+                  <FaLinkedin className="rounded-full border-2 border-ternaryText text-lightText" />
                 </Link>
               )}
               {ownerData?.stackOverflowUrl && (
                 <Link href={ownerData?.stackOverflowUrl} target="_blank">
-                  <PiStackOverflowLogoFill className="rounded-full border-2 border-ternaryText" />
+                  <PiStackOverflowLogoFill className="rounded-full border-2 border-ternaryText text-lightText" />
                 </Link>
               )}
             </div>

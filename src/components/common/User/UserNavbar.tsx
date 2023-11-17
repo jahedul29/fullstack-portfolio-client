@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Link } from "react-scroll";
+import { scroller } from "react-scroll";
 
 const UserNavbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -40,18 +40,20 @@ const UserNavbar = () => {
       </div>
       <div className="flex gap-x-6 text-primaryText items-center hidden md:flex">
         {navbarItems?.map((item) => (
-          <Link
-            key={item.id}
-            to={item.id}
-            spy={true}
-            smooth={true}
-            offset={-100}
-            duration={500}
+          <a
+            onClick={() =>
+              scroller.scrollTo(item.id, {
+                duration: 500,
+                delay: 30,
+                smooth: "easeInOutCubic",
+                offset: -100,
+              })
+            }
+            key={item?.id}
+            className="border-b-2 border-transparent hover:border-ternaryText hover:text-ternaryText pb-1 transition-all duration-300"
           >
-            <a className="border-b-2 border-transparent hover:border-ternaryText hover:text-ternaryText pb-1 transition-all duration-300">
-              {item.title}
-            </a>
-          </Link>
+            {item.title}
+          </a>
         ))}
       </div>
       <div className="block md:hidden">
@@ -83,16 +85,15 @@ const UserNavbar = () => {
             <a
               className="border-b-2 border-transparent hover:border-ternaryText hover:text-ternaryText py-3 transition-all duration-300 w-full text-center"
               key={item.id}
+              onClick={() =>
+                scroller.scrollTo(item.id, {
+                  duration: 500,
+                  delay: 30,
+                  smooth: "easeInOutCubic",
+                })
+              }
             >
-              <Link
-                to={item.id}
-                spy={true}
-                smooth={true}
-                offset={-100}
-                duration={500}
-              >
-                {item.title}
-              </Link>
+              {item.title}
             </a>
           ))}
         </div>

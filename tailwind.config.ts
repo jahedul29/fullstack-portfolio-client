@@ -19,6 +19,7 @@ const config: Config = {
         primaryText: "#fff",
         secondaryText: "#6c757d",
         ternaryText: "#41a796",
+        lightText: "#a6adba",
       },
     },
   },

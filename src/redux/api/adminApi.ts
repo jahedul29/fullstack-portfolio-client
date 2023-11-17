@@ -1,4 +1,3 @@
-import { IDepartment, IMeta } from "@/types";
 import { tagTypes } from "../tag-types";
 import { baseApi } from "./baseApi";
 
@@ -6,20 +5,20 @@ const ADMIN_URL = "/admins";
 
 const adminApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
-    admins: build.query({
-      query: (arg: Record<string, any>) => ({
-        url: `${ADMIN_URL}`,
-        method: "GET",
-        params: arg,
-      }),
-      transformResponse: (response: IDepartment[], meta: IMeta) => {
-        return {
-          admins: response,
-          meta,
-        };
-      },
-      providesTags: [tagTypes.admin],
-    }),
+    // admins: build.query({
+    //   query: (arg: Record<string, any>) => ({
+    //     url: `${ADMIN_URL}`,
+    //     method: "GET",
+    //     params: arg,
+    //   }),
+    //   transformResponse: (response: IDepartment[], meta: IMeta) => {
+    //     return {
+    //       admins: response,
+    //       meta,
+    //     };
+    //   },
+    //   providesTags: [tagTypes.admin],
+    // }),
     getAdminById: build.query({
       query: (id) => ({
         url: `${ADMIN_URL}/${id}`,
@@ -54,7 +53,7 @@ const adminApi = baseApi.injectEndpoints({
 });
 
 export const {
-  useAdminsQuery,
+  // useAdminsQuery,
   useGetAdminByIdQuery,
   useAddAdminMutation,
   useUpdateAdminMutation,
