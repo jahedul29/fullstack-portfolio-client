@@ -15,8 +15,8 @@ export async function generateMetadata(): Promise<Metadata> {
   );
 
   return {
-    title: ownerData?.name,
-    description: ownerData?.aboutOwner,
+    title: `${ownerData?.name} | ${ownerData?.designation}`,
+    description: ownerData?.aboutOwner?.split("\n")[0],
     icons: {
       icon: ownerData?.photoUrl,
       apple: ownerData?.photoUrl,
@@ -28,20 +28,21 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       type: "website",
       url: typeof window !== "undefined" ? window.location.href : "",
-      title: ownerData?.designation,
+      title: `${ownerData?.name} | ${ownerData?.designation}`,
       description: ownerData?.aboutOwner?.split("\n")[0],
       siteName: ownerData?.name,
       images: [{ url: ownerData?.photoUrl }],
       locale: "en_US",
     },
+    keywords: ownerData?.metaKeywords,
     twitter: {
-      card: ownerData?.designation,
-      title: ownerData?.name,
-      description: ownerData?.aboutOwner,
+      card: ownerData?.name,
+      title: `${ownerData?.name} | ${ownerData?.designation}`,
+      description: ownerData?.aboutOwner?.split("\n")[0],
       images: [{ url: ownerData?.photoUrl }],
     },
     robots: {
-      index: false,
+      index: true,
       follow: true,
       nocache: true,
       googleBot: {

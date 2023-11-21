@@ -9,7 +9,7 @@ import { FaGithub, FaLink, FaYoutube } from "react-icons/fa";
 const Projects = ({ projects, id = "" }: { projects: any; id?: string }) => {
   return (
     <section
-      className="container mx-auto px-5 sm:px-10 md:px-0 xl:px-40 mt-40 mb-40"
+      className="container mx-auto px-5 sm:px-10 md:px-0 xl:px-20 2xl:px-40 mt-40 mb-40"
       id={id}
     >
       <SectionHeader title="Projects" />

@@ -5,7 +5,9 @@ import { Row } from "antd";
 const ErrorPage = () => {
   return (
     <Row justify={"center"} align={"middle"} style={{ height: "100vh" }}>
-      <h1 style={{ color: "red" }}>Something went wrong</h1>
+      <h2 style={{ color: "red" }} className="text-6xl">
+        Something went wrong
+      </h2>
     </Row>
   );
 };

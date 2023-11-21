@@ -34,9 +34,9 @@ const UserNavbar = () => {
   ];
 
   return (
-    <div className="flex justify-between py-5 px-10 bg-primaryBg relative">
+    <div className="flex justify-between items-center md:items-start py-5 px-5 md:px-10 bg-primaryBg relative">
       <div>
-        <h2>Jahedul</h2>
+        <h2 className="text-primaryText">Jahedul</h2>
       </div>
       <div className="flex gap-x-6 text-primaryText items-center hidden md:flex">
         {navbarItems?.map((item) => (
@@ -50,7 +50,7 @@ const UserNavbar = () => {
               })
             }
             key={item?.id}
-            className="border-b-2 border-transparent hover:border-ternaryText hover:text-ternaryText pb-1 transition-all duration-300"
+            className="border-b-2 border-transparent hover:border-ternaryText hover:text-ternaryText pb-1 transition-all duration-300 cursor-pointer"
           >
             {item.title}
           </a>
@@ -58,7 +58,7 @@ const UserNavbar = () => {
       </div>
       <div className="block md:hidden">
         <label
-          className="btn btn-ghost btn-circle"
+          className="btn btn-ghost btn-circle text-primaryText"
           onClick={() => setIsMobileMenuOpen((prev) => !prev)}
         >
           <svg
@@ -77,7 +77,7 @@ const UserNavbar = () => {
           </svg>
         </label>
         <div
-          className={`absolute bg-secondaryBg transition-all duration-300 flex flex-col w-screen left-0 overflow-hidden top-[85px] z-20 ${
+          className={`absolute bg-secondaryBg transition-all duration-300 flex flex-col w-screen left-0 overflow-hidden top-[85px] z-20 text-primaryText ${
             isMobileMenuOpen ? "max-h-screen" : "max-h-0"
           }`}
         >

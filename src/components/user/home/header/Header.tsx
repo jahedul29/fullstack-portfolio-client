@@ -1,4 +1,5 @@
 import { ISkill } from "@/types";
+// import GithubData from "./GithubData";
 import HireMeButton from "./HireMeButton";
 import ParticleAnimation from "./ParticleAnimation";
 import SkillTypical from "./SkillTypical";

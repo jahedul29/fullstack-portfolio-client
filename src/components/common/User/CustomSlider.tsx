@@ -20,7 +20,7 @@ const CustomSlider = ({
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
       items: 3,
-      paritialVisibilityGutter: 60,
+      paritialVisibilityGutter: 10,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },

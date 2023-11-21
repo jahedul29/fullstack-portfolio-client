@@ -1,3 +1,5 @@
+"use  client";
+
 type ISectionHeaderProps = {
   classNames?: string;
   title: string;
@@ -6,7 +8,7 @@ type ISectionHeaderProps = {
 const SectionHeader = ({ classNames = "", title }: ISectionHeaderProps) => {
   return (
     <div className={`w-full ${classNames}`}>
-      <h1 className="text-4xl text-ternaryText font-semibold mb-10">{title}</h1>
+      <h2 className="text-4xl text-ternaryText font-semibold mb-10">{title}</h2>
     </div>
   );
 };
