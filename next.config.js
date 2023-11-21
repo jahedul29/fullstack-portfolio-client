@@ -2,6 +2,9 @@
 const nextConfig = {
     images: {
         domains: ["i.ibb.co", "i.imgur.com", "avatars.githubusercontent.com"]
+    },
+    experimental: {
+        nextScriptWorkers: true
     }
 }
 

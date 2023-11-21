@@ -37,6 +37,7 @@ const Blogs = ({ blogs, id = "" }: { blogs: IBlog[]; id: string }) => {
               href={item?.blogUrl}
               target="_blank"
               className="px-4 py-1  text-ternaryText rounded-lg border border-ternaryText"
+              aria-label="Redirect to Blog"
             >
               Read at {item.platform}
             </Link>

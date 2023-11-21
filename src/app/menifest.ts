@@ -21,6 +21,12 @@ export default async function manifest(): Promise<MetadataRoute.Manifest> {
         sizes: "192x192",
         type: "image/jpg",
       },
+      {
+        src: ownerData?.photoUrl,
+        sizes: "512x512",
+        type: "image/jpg",
+      },
     ],
+    lang: "en",
   };
 }

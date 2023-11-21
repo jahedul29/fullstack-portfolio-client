@@ -66,6 +66,11 @@
   dependencies:
     regenerator-runtime "^0.14.0"
 
+"@builder.io/partytown@^0.8.1":
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/@builder.io/partytown/-/partytown-0.8.1.tgz#d50f2508b2e9b554ac890e8130c60b27cfb5958a"
+  integrity sha512-p4xhEtQCPe8YFJ8e7KT9RptnT+f4lvtbmXymbp1t0bLp+USkNMTxrRMNc3Dlr2w2fpxyX7uA0CyAeU3ju84O4A==
+
 "@ctrl/tinycolor@^3.4.0", "@ctrl/tinycolor@^3.6.0", "@ctrl/tinycolor@^3.6.1":
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/@ctrl/tinycolor/-/tinycolor-3.6.1.tgz#b6c75a56a1947cc916ea058772d666a2c8932f31"

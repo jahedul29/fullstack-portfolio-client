@@ -60,6 +60,7 @@ const GetInTouch = ({
             <Link
               href={`https://mail.google.com/mail/u/0/?fs=1&to=${ownerData?.email}&tf=cm`}
               target="_blank"
+              aria-label="Redirect to mail address"
             >
               <p className="flex gap-x-2 items-center text-ternaryText font-semibold text-lg">
                 {" "}
@@ -81,6 +82,7 @@ const GetInTouch = ({
                 className="text-ternaryText"
                 href={ownerData?.calanderlyUrl}
                 target="_blank"
+                aria-label="Redirect to calanderly"
               >
                 {ownerData?.calanderlyUrl}
               </Link>
@@ -91,22 +93,38 @@ const GetInTouch = ({
             <p className="text-lightText">Social Handles:</p>
             <div className="flex text-4xl gap-4 mt-2">
               {ownerData?.githubUrl && (
-                <Link href={ownerData?.githubUrl} target="_blank">
+                <Link
+                  aria-label="Redirect to github social handler"
+                  href={ownerData?.githubUrl}
+                  target="_blank"
+                >
                   <FaGithub className="rounded-full border-2 border-ternaryText text-lightText" />
                 </Link>
               )}
               {ownerData?.facebookUrl && (
-                <Link href={ownerData?.facebookUrl} target="_blank">
+                <Link
+                  aria-label="Redirect to facebook social handler"
+                  href={ownerData?.facebookUrl}
+                  target="_blank"
+                >
                   <FaFacebook className="rounded-full border-2 border-ternaryText text-lightText" />
                 </Link>
               )}
               {ownerData?.linkedInUrl && (
-                <Link href={ownerData?.linkedInUrl} target="_blank">
+                <Link
+                  aria-label="Redirect to linkedin social handler"
+                  href={ownerData?.linkedInUrl}
+                  target="_blank"
+                >
                   <FaLinkedin className="rounded-full border-2 border-ternaryText text-lightText" />
                 </Link>
               )}
               {ownerData?.stackOverflowUrl && (
-                <Link href={ownerData?.stackOverflowUrl} target="_blank">
+                <Link
+                  aria-label="Redirect to stackoverflow social handler"
+                  href={ownerData?.stackOverflowUrl}
+                  target="_blank"
+                >
                   <PiStackOverflowLogoFill className="rounded-full border-2 border-ternaryText text-lightText" />
                 </Link>
               )}

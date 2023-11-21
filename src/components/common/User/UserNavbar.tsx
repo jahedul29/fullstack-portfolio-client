@@ -41,14 +41,16 @@ const UserNavbar = () => {
       <div className="flex gap-x-6 text-primaryText items-center hidden md:flex">
         {navbarItems?.map((item) => (
           <a
-            onClick={() =>
+            href={`/home/#${item?.id}`}
+            onClick={(e) => {
+              e.preventDefault();
               scroller.scrollTo(item.id, {
                 duration: 500,
                 delay: 30,
                 smooth: "easeInOutCubic",
                 offset: -100,
-              })
-            }
+              });
+            }}
             key={item?.id}
             className="border-b-2 border-transparent hover:border-ternaryText hover:text-ternaryText pb-1 transition-all duration-300 cursor-pointer"
           >
@@ -83,15 +85,17 @@ const UserNavbar = () => {
         >
           {navbarItems?.map((item) => (
             <a
+              href={`/home/#${item?.id}`}
               className="border-b-2 border-transparent hover:border-ternaryText hover:text-ternaryText py-3 transition-all duration-300 w-full text-center"
               key={item.id}
-              onClick={() =>
+              onClick={(e) => {
+                e.preventDefault();
                 scroller.scrollTo(item.id, {
                   duration: 500,
                   delay: 30,
                   smooth: "easeInOutCubic",
-                })
-              }
+                });
+              }}
             >
               {item.title}
             </a>

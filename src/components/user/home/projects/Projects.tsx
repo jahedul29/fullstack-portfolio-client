@@ -19,21 +19,33 @@ const Projects = ({ projects, id = "" }: { projects: any; id?: string }) => {
             <div className="flex justify-end gap-x-4 text-2xl mb-3">
               {project?.githubUrl && (
                 <Tooltip title="Github">
-                  <Link href={project?.githubUrl} target="_blank">
+                  <Link
+                    aria-label="Redirect to project's github repository"
+                    href={project?.githubUrl}
+                    target="_blank"
+                  >
                     <FaGithub />
                   </Link>
                 </Tooltip>
               )}
               {project?.videoUrl && (
                 <Tooltip title="Youtube">
-                  <Link href={project?.videoUrl} target="_blank">
+                  <Link
+                    aria-label="Redirect to project's video"
+                    href={project?.videoUrl}
+                    target="_blank"
+                  >
                     <FaYoutube />
                   </Link>
                 </Tooltip>
               )}
               {project?.websiteUrl && (
                 <Tooltip title="Live Url">
-                  <Link href={project?.websiteUrl} target="_blank">
+                  <Link
+                    aria-label="Redirect to project's live site"
+                    href={project?.websiteUrl}
+                    target="_blank"
+                  >
                     <FaLink />
                   </Link>
                 </Tooltip>
