@@ -81,3 +81,8 @@ export type IOwner = {
   stackOverflowUrl?: string;
   id: string;
 };
+
+export type ISelectOptions = {
+  label: string;
+  value: string;
+};

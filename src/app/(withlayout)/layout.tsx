@@ -12,7 +12,7 @@ const UserLayout = ({ children }: { children: ReactNode }) => {
         <FloatingLinks />
         <GotoTopButton />
         <UserNavbar />
-        {children}
+        <div className="w-full min-h-screen">{children}</div>
         <Footer />
       </div>
     </Suspense>

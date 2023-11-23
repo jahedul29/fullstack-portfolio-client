@@ -84,6 +84,7 @@ const Projects = ({ projects, id = "" }: { projects: any; id?: string }) => {
         <CommonButton
           content="See all Projects"
           classNames="mt-12 px-20 py-2 text-base"
+          href="/home/projects"
         />
       </div>
     </section>
