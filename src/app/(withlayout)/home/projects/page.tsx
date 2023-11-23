@@ -11,18 +11,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaGithub, FaLink, FaYoutube } from "react-icons/fa";
 
-const Projects = ({
-  searchParams,
-}: {
-  searchParams: { searchTerm: string };
-}) => {
+const Projects = ({}: {}) => {
   const [projects, setProjects] = useState([]);
-  // let queryParams: any = {
-  //   page: 1,
-  //   limit: 100,
-  //   sortBy: "priorityScore",
-  //   sortOrder: "desc",
-  // };
   const [queryParams, setQueryParams] = useState<{
     [key: string]: string | number | undefined;
   }>({
@@ -49,7 +39,7 @@ const Projects = ({
   return (
     <div className="container mx-auto px-5 sm:px-10 md:px-0 xl:px-20 2xl:px-40 mt-10 lg:mt-20 mb-40">
       <div className="flex flex-col lg:flex-row justify-between">
-        <SectionHeader title="All Projects" classNames="mb-5 lg:mb-10" />
+        <SectionHeader title="Projects" classNames="mb-5 lg:mb-10" />
         <Filterbar
           classNames="w-full lg:w-1/2 mb-10 lg:mb-0"
           queryParams={queryParams}

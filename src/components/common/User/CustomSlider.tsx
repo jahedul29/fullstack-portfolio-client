@@ -25,7 +25,7 @@ const CustomSlider = ({
     tablet: {
       breakpoint: { max: 1024, min: 464 },
       items: 2,
-      paritialVisibilityGutter: 50,
+      paritialVisibilityGutter: 0,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },

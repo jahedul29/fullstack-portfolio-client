@@ -48,6 +48,7 @@ const Blogs = ({ blogs, id = "" }: { blogs: IBlog[]; id: string }) => {
         <CommonButton
           content="See all Blogs"
           classNames="mt-12 px-20 py-2 text-base"
+          href="/home/blogs"
         />
       </div>
     </section>

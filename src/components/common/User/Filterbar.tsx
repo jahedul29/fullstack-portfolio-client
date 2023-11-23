@@ -32,7 +32,6 @@ const Filterbar = ({
   allowSelectClear = false,
   classNames = "",
 }: IFilterBarProps) => {
-  const searchPrams = new URLSearchParams(window ? window.location.search : "");
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [filter, setFilter] = useState<string>("");
   const handleSelectChange = (value: string) => {
@@ -53,7 +52,7 @@ const Filterbar = ({
         [filterKey]: filter,
       }));
     }
-  }, [debouncedTerm, searchTerm, setQueryParams, filter]);
+  }, [debouncedTerm, searchTerm, setQueryParams, filter, filterKey]);
 
   return (
     <div className={`flex gap-x-4 w-1/2 ${classNames}`}>

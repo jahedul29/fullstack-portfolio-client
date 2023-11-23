@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { scroller } from "react-scroll";
 
@@ -36,7 +37,9 @@ const UserNavbar = () => {
   return (
     <div className="flex justify-between items-center md:items-start py-5 px-5 md:px-10 bg-primaryBg relative">
       <div>
-        <h2 className="text-primaryText">Jahedul</h2>
+        <Link href="/home" className="text-ternaryText font-bold text-2xl">
+          Jahedul
+        </Link>
       </div>
       <div className="flex gap-x-6 text-primaryText items-center hidden md:flex">
         {navbarItems?.map((item) => (
