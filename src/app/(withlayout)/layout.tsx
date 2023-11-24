@@ -6,7 +6,7 @@ import Sidebar from "@/components/common/Admin/Sidebar";
 import Loading from "@/components/common/Loading";
 
 import type { MenuProps } from "antd";
-import { Breadcrumb, Layout, theme } from "antd";
+import { Layout, theme } from "antd";
 import { ReactNode, Suspense } from "react";
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -23,13 +23,7 @@ const AdminLayout = ({ children }: { children: ReactNode }) => {
         <Sidebar />
         <Layout>
           <AdminHeader />
-          <Content style={{ margin: "0 16px" }}>
-            <Breadcrumb style={{ margin: "16px 0" }}>
-              <Breadcrumb.Item>User</Breadcrumb.Item>
-              <Breadcrumb.Item>Bill</Breadcrumb.Item>
-            </Breadcrumb>
-            {children}
-          </Content>
+          <Content style={{ margin: "0 16px" }}>{children}</Content>
           <AdminFooter />
         </Layout>
       </Layout>
