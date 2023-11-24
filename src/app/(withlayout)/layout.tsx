@@ -19,7 +19,7 @@ const AdminLayout = ({ children }: { children: ReactNode }) => {
 
   return (
     <Suspense fallback={<Loading />}>
-      <Layout style={{ minHeight: "100vh" }}>
+      <Layout hasSider={true} style={{ minHeight: "100vh" }}>
         <Sidebar />
         <Layout>
           <AdminHeader />

@@ -48,6 +48,15 @@ const Sidebar = () => {
       collapsed={collapsed}
       onCollapse={(value) => setCollapsed(value)}
       className="!bg-primaryBg"
+      width={280}
+      style={{
+        overflow: "auto",
+        height: "100vh",
+        position: "sticky",
+        left: 0,
+        top: 0,
+        bottom: 0,
+      }}
     >
       <div className="w-full h-[64px] flex items-center justify-center">
         <h1 className="text-ternaryText font-bold text-2xl text-center">
