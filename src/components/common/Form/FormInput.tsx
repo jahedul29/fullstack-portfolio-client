@@ -34,7 +34,9 @@ const FormInput = ({
 
   return (
     <>
-      {label ? label : null}
+      {label ? (
+        <span className="text-darkText font-medium">{label}</span>
+      ) : null}
       <Controller
         control={control}
         name={name}

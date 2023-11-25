@@ -1,22 +1,42 @@
-import Loading from "@/components/common/Loading";
-import FloatingLinks from "@/components/common/User/FloatingLinks";
-import Footer from "@/components/common/User/Footer";
-import GotoTopButton from "@/components/common/User/GotoTopButton";
-import UserNavbar from "@/components/common/User/UserNavbar";
-import { ReactNode, Suspense } from "react";
+"use client";
 
-const UserLayout = ({ children }: { children: ReactNode }) => {
+import AdminFooter from "@/components/common/Admin/AdminFooter";
+import AdminHeader from "@/components/common/Admin/AdminHeader";
+import Sidebar from "@/components/common/Admin/Sidebar";
+import Loading from "@/components/common/Loading";
+import { isLoggedIn } from "@/services/auth.service";
+
+import type { MenuProps } from "antd";
+import { Layout } from "antd";
+import { useRouter } from "next/navigation";
+import { ReactNode, Suspense, useEffect } from "react";
+
+const { Header, Content, Footer, Sider } = Layout;
+
+type MenuItem = Required<MenuProps>["items"][number];
+const AdminLayout = ({ children }: { children: ReactNode }) => {
+  const router = useRouter();
+  const isUserLoggedIn = isLoggedIn();
+
+  useEffect(() => {
+    if (!isUserLoggedIn) {
+      router.push("/login");
+    }
+    // setIsLoading(true);
+  }, [router]);
+
   return (
     <Suspense fallback={<Loading />}>
-      <div className="w-screen min-h-screen bg-primaryBg relative">
-        <FloatingLinks />
-        <GotoTopButton />
-        <UserNavbar />
-        <div className="w-full min-h-screen">{children}</div>
-        <Footer />
-      </div>
+      <Layout hasSider={true} style={{ minHeight: "100vh" }}>
+        <Sidebar />
+        <Layout>
+          <AdminHeader />
+          <Content style={{ margin: "0 16px" }}>{children}</Content>
+          <AdminFooter />
+        </Layout>
+      </Layout>
     </Suspense>
   );
 };
 
-export default UserLayout;
+export default AdminLayout;
