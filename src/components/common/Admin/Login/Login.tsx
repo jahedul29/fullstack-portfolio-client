@@ -28,7 +28,7 @@ const Login = () => {
         message.success("User logged in successfully");
         storeUserInfo({ accessToken: res?.accessToken });
 
-        router.push("/profile");
+        router.push("/admin/dashboard");
       } else {
         message.error("Something went wrong");
       }
