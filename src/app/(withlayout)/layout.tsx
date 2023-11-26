@@ -9,7 +9,7 @@ import { isLoggedIn } from "@/services/auth.service";
 import type { MenuProps } from "antd";
 import { Layout } from "antd";
 import { redirect } from "next/navigation";
-import { ReactNode, Suspense } from "react";
+import { ReactNode, Suspense, useEffect } from "react";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -17,9 +17,11 @@ type MenuItem = Required<MenuProps>["items"][number];
 const AdminLayout = ({ children }: { children: ReactNode }) => {
   const isUserLoggedIn = isLoggedIn();
 
-  if (!isUserLoggedIn) {
-    return redirect("/login");
-  }
+  useEffect(() => {
+    if (!isUserLoggedIn) {
+      return redirect("/login");
+    }
+  }, [isUserLoggedIn]);
 
   return (
     <Suspense fallback={<Loading />}>
