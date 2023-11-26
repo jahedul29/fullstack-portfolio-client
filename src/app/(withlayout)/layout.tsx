@@ -8,22 +8,20 @@ import { isLoggedIn } from "@/services/auth.service";
 
 import type { MenuProps } from "antd";
 import { Layout } from "antd";
-import { useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
 import { ReactNode, Suspense, useEffect } from "react";
 
 const { Header, Content, Footer, Sider } = Layout;
 
 type MenuItem = Required<MenuProps>["items"][number];
 const AdminLayout = ({ children }: { children: ReactNode }) => {
-  const router = useRouter();
   const isUserLoggedIn = isLoggedIn();
 
   useEffect(() => {
     if (!isUserLoggedIn) {
-      router.push("/login");
+      return redirect("/login");
     }
-    // setIsLoading(true);
-  }, [router]);
+  }, [isUserLoggedIn]);
 
   return (
     <Suspense fallback={<Loading />}>
